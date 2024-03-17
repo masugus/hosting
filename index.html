@@ -2921,7 +2921,7 @@
                                     <input required class="large" type="text" name="guests[0][name]"
                                         placeholder="Añadir el nombre del invitado">
                                     <div class="event">
-                                        <h3>La boda</h3>
+                                        <h3 style="font-family: 'Southland';">La boda</h3>
                                         <div class="selectWrap">
                                             <select required name="guests[0][events][event1][response]"
                                                 class="rsvpResponse">
@@ -2941,7 +2941,19 @@
                                             placeholder="¿Alguna alergia?" class="notRequired"></textarea>
                                     </div>
                                     <div class="event">
-                                        <h3>Niños</h3>
+                                        <h3 style="font-family: 'Southland';">Acompañantes</h3>
+                                        <div class="selectWrap">
+
+                                            <select required name="guests[0][events][event2][response]"
+                                                class="rsvpResponse">
+                                                <option value="">¿Vendrás acompañado?</option>
+                                                <option value="1">¡Sí!</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="event">
+                                        <h3 style="font-family: 'Southland';">Niños</h3>
                                         <div class="selectWrap">
                                             <select required name="guests[0][events][event2][response]"
                                                 class="rsvpResponse">
@@ -2954,18 +2966,7 @@
                                             placeholder="¿Alguna alergia?" class="notRequired"></textarea>
 
                                     </div>
-                                    <div class="event">
-                                        <h3>Acompañantes</h3>
-                                        <div class="selectWrap">
-
-                                            <select required name="guests[0][events][event2][response]"
-                                                class="rsvpResponse">
-                                                <option value="">¿Vendrás acompañado?</option>
-                                                <option value="1">¡Sí!</option>
-                                                <option value="0">No</option>
-                                            </select>
-                                        </div>
-                                    </div>
+     
 
                                 </div>
                                 <!-- <a id="addGuest124674" class="addGuestBtn">
@@ -2975,7 +2976,7 @@
                                 </a> -->
                                 <div class="line"></div>
                                 <div class="group">
-                                    <h3>No puedo evitar bailar cuando oigo...</h3>
+                                    <h3 style="font-size: 25px;">No puedo evitar bailar cuando oigo...</h3>
                                     <textarea name="customs[custom1][answer]"
                                         placeholder="¡Introduce el nombre de tu canción favorita¡"></textarea>
                                 </div>
