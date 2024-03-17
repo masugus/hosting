@@ -2824,7 +2824,7 @@ body.password {
     .sectionCont.small
     .imgCont:not(.videoCont):not(.doNotCrop)
     .textCont {
-    min-height: 68.53vh;
+    min-height: 25vh;
   }
   .section.full .sectionCont.medium .imgCont:not(.videoCont):not(.doNotCrop),
   .section.full
