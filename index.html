@@ -4,7 +4,7 @@
 <head>
     <meta name="google" content="notranslate">
     <meta charset="UTF-8">
-    <title>¡Bienvenidos boda de Ana & Dani!</title>
+    <title>¡Bienvenidos boda de Cuba & Miami!</title>
     <meta name="color-scheme" content="light" />
     <meta name="supported-color-schemes" content="light" />
     <meta name="description"
@@ -13,8 +13,8 @@
     <meta property="twitter:image" content="">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="author" content="Alberto MAsogo" />
-    <meta name="copyright" content="&copy;" />
+    <meta name="author" content="Alberto Masogo" />
+    <meta name="copyright" content="masugusdev" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <script src="scripts/jquery-3.7.1.min.js"></script>
@@ -27,6 +27,36 @@
         var footerH;
         var newSection;
         var collage;
+        function countDown() {
+            // Establece la fecha y hora de finalización
+            var countDownDate = new Date("Jun 22, 2024 18:30:00").getTime();
+
+            // Actualiza el contador cada segundo
+            var countdownFunction = setInterval(function () {
+
+                // Obtiene la fecha y hora actuales
+                var now = new Date().getTime();
+
+                // Encuentra la diferencia entre ahora y la fecha de finalización
+                var distance = countDownDate - now;
+
+                // Calcula el tiempo para días, horas, minutos y segundos
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Muestra el resultado en el elemento con id="countdown"
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                // Si el contador ha terminado, muestra un mensaje
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById("countdown").innerHTML = "¡Es hora de la ceremonia!";
+                }
+            }, 1000);
+
+        }
         function headerHeight() {
             headerH = $('header').height();
             headerPT = Number($('header').css('padding-top').slice(0, -2));
@@ -114,7 +144,7 @@
                         $(e).css('margin-top', headerH + 'px');
                     }
                 } else {
-                    $(e).css('margin-top', headerH + 'px');
+                    // $(e).css('margin-top', headerH + 'px');
                 }
             });
             if ($('.coverpage.header').is('section')) {
@@ -248,7 +278,7 @@
             });
 
             // change to new page
-            var siteTitle = 'Ana y Dani';
+            var siteTitle = 'Miami & Cuba';
             var custom = '';
             var directory = '/anaydani';
             var siteURL = (location.hostname.search('anaydaniboda.com') >= 0) ? directory : custom;
@@ -443,7 +473,7 @@
                             $(e).css('margin-top', headerH + 'px');
                         }
                     } else {
-                        $(e).css('margin-top', headerH + 'px');
+                        // $(e).css('margin-top', headerH + 'px');
                     }
                 });
                 if ($('.coverpage.header').is('section')) {
@@ -493,6 +523,8 @@
                 }
             });
 
+
+
             $(window).resize(function () {
                 $winH = $(this).height();
                 $mainH = $('main').height();
@@ -519,7 +551,7 @@
             headerH = headerHeight();
             footerH = footerHeight();
             //var mmH = $('#mm').height();
-
+            countDown();
             if (newSection) scrollToSection(newSection);
             calculateSpace();
             setMinHeight(headerH, footerH);
@@ -2119,7 +2151,7 @@
         <div class="bgBox" style="background-color: rgba(18,45,60,0.8)"></div>
         <nav>
             <div class="navScroll">
-                <a href="" class="navItem" rel="nofollow">Home</a>
+                <a href="home" class="navItem" rel="nofollow">Home</a>
                 <a href="p124670" class="navItem" rel="nofollow">La boda</a>
                 <a href="p124672" class="navItem" rel="nofollow">Otros eventos</a>
                 <a href="p124671" class="navItem" rel="nofollow">Registro</a>
@@ -2131,12 +2163,13 @@
     </div>
 
     <!-- PRIMARY COLOR : 4a9b95-->
+    <!-- MAYBE PRIMARY COLOR: #4a9b95b5 -->
     <!-- SECONDARY : 4a9b95  -->
 
     <!-- HEADER -->
     <header class="home singlePage cover">
         <h1 class="monogram text">
-            <a href="home" class="navItem" rel="nofollow" style="color: #4a9b95; font-weight: 700; ">Ana & Dani</a>
+            <a href="home" class="navItem" rel="nofollow" style="color: #4a9b95; font-weight: 700; ">Miami & Cuba</a>
         </h1>
     </header>
     <!-- MAIN -->
@@ -2157,9 +2190,8 @@
             <div class="bgBox"
                 style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/fondo_textura_papel_rugoso.jpeg); background-position: center center">
             </div>
-            <h1 id="coverpage_0" class="logo" style="font-family: 'Southland'; font-size: 220px; color: #4a9b95; filter: drop-shadow(rgba(0, 0, 0, 0) -1px -1px 0px) drop-shadow(rgba(255, 255, 255, 0.6) 1px 1px 0px); letter-spacing: 0px; 
-                ">
-
+            <h1 id="coverpage_0" class="logo"
+                style="font-family: 'Southland'; font-size: 220px; color: #4a9b95; filter: drop-shadow(rgba(0, 0, 0, 0) -1px -1px 0px) drop-shadow(rgba(255, 255, 255, 0.6) 1px 1px 0px); letter-spacing: 0px;">
                 <span>Ana & Dani</span>
             </h1>
         </section>
@@ -2174,16 +2206,21 @@
                 <div class="sectionCont  small">
                     <!-- **if an image, bgcolor, video or map is added for this section** -->
                     <!-- *if image and text* -->
-                    <div class="imgCont " style="background-color: #4a9b95">
+                    <div class="imgCont " style="background-color: #4a9b95b5">
                         <!-- with image all text on image -->
                         <div id="head_10" class="textCont">
-                            <h2 style="color: #FFFBF7; ">La ceremonia </h2>
-                            <div class="subsection">
-                                <h3 style="color: #FFFBF7">22 Junio 24</h3>
-                                <h4 style="color: #FFFBF7"><br />
-                                    6 p.m<br />
-                                    Los jardines Duff<br />
-                                    Valedepeñas, Ciudad Real<br /></h4>
+                            <h2 style="color: #FFFBF7; height: 120px;">¡¡Cuenta atrás!!</h2>
+                            <h4 style="color: #FFFBF7">A veces lo que empieza siendo una locura, se convierte en el
+                                mejor viaje de tu vida.</h4>
+                            <div class="subsection" style="margin-top: 20px;">
+                                <div id="countdown" class="countdown" style="color: #FFFBF7;"></div>
+                                <!-- 
+
+                                   <h4 style="color: #FFFBF7"><br />
+                                       6 p.m<br />
+                                       Los jardines Duff<br />
+                                       Valedepeñas, Ciudad Real<br /></h4>
+                                -->
                             </div>
                         </div>
 
@@ -2194,6 +2231,122 @@
             </div>
             <!-- end .section -->
 
+            <!-- WHEN -->
+            <div class="section split ">
+                <div class="sectionCont  medium addPadd">
+                    <!-- **if an image, bgcolor, video or map is added for this section** -->
+                    <!-- *if image and text* -->
+                    <div class="imgCont " style="background-color: #F6F0E6"> <!-- with image all text on image -->
+                        <div id="head_11" class="textCont">
+                            <h2 style="color: #4a9b95; ">¿Cuándo?</h2>
+                            <div class="subsection" style="display: flex; 
+                            flex-direction: column;
+                            align-items: center;">
+                                <h3 style="color: #4a9b95;">Día: 22 de Junio 2024<br />
+                                </h3>
+                                <h4 style="color: #4a9b95; "><br />
+                                    Hora: 18:30 PM<br />
+                                </h4>
+                                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Boda+Miami+%26+Cuba&dates=20240622T163000Z&details=Para+más+información,+visita+https://www.miamiycubaboda.com&location=Finca+Lord+Carrington,+N-430,+0,+13240+La+solana,+Ciudad+Real&sf=true&output=xml"
+                                    target="_blank">
+                                    <img style="width: 50px; height: 50px;" src="images/icons/calendar-100.png"
+                                        alt="Añadir a Google Calendar">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end sectionCont -->
+                <div class="sectionCont  medium addPadd">
+                    <!-- **if an image, bgcolor, video or map is added for this section** -->
+                    <!-- *if image and text* -->
+                    <div class="imgCont  mainPhoto">
+                        <div class="bgBox mainPhoto"
+                            style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/an_dan.jpg); background-position: center center">
+                        </div>
+                    </div>
+                </div>
+                <!-- end sectionCont -->
+            </div>
+            <div class="section split ">
+                <div class="sectionCont  medium addPadd">
+                    <!-- **if an image, bgcolor, video or map is added for this section** -->
+                    <!-- *if image and text* -->
+                    <div class="imgCont " style="background-color: #F6F0E6"> <!-- with image all text on image -->
+                        <div id="head_11" class="textCont">
+                            <h2 style="color: #4a9b95; ">¿Dónde?</h2>
+                            <div class="subsection" style="display: flex; 
+                            flex-direction: column;
+                            align-items: center;">
+                                <h3 style="color: #4a9b95">Finca Lord Carrington<br />
+                                </h3>
+                                <h4 style="color: #4a9b95"><br />
+                                    Finca Lord Carrington, N-430, 0<br />
+                                    13240 La Solana, Ciudad Real<br /></h4>
+                                <img src="images/icons/mapamundi-64.png" style="width: 50px; height: 50px;" alt="Ver en Google Maps"
+                                    style="cursor:pointer" onclick="openModal()">
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.165236868892!2d-3.238839684660019!3d38.94128697957077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1e8e5bdb1b8a09%3A0x72c7e2d35a3ad30!2sFinca%20Lord%20Carrington!5e0!3m2!1sen!2ses!4v1637672821234!5m2!1sen!2ses"
+                                    width="100%" height="100%" style="border:0" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById("myModal");
+
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function () {
+                                modal.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function (event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+
+                            function openModal() {
+                                modal.style.display = "block";
+                            }
+                        </script>
+
+                    </div>
+
+                </div>
+                <!-- end sectionCont -->
+
+                <div class="sectionCont  medium addPadd">
+                    <!-- **if an image, bgcolor, video or map is added for this section** -->
+                    <!-- *if image and text* -->
+                    <div class="imgCont  mainPhoto">
+                        <div class="bgBox mainPhoto"
+                            style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/an_dan.jpg); background-position: center center">
+                        </div>
+                        <!-- with image all text on image -->
+                        <!-- 
+                            
+                               <img style="position: absolute; bottom:2px" src="images/svg/rip_paper.svg" alt=" " class="svg" />
+                            -->
+                    </div>
+                </div>
+                <!-- end sectionCont -->
+            </div>
+            <!-- LATER -->
             <div class="section split ">
                 <div class="sectionCont  medium addPadd">
                     <!-- **if an image, bgcolor, video or map is added for this section** -->
@@ -2218,14 +2371,15 @@
                 <div class="sectionCont  medium addPadd">
                     <!-- **if an image, bgcolor, video or map is added for this section** -->
                     <!-- *if image and text* -->
-                    <div class="imgCont  ">
-                        <div class="bgBox"
+                    <div class="imgCont  mainPhoto">
+                        <div class="bgBox mainPhoto"
                             style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/an_dan.jpg); background-position: center center">
                         </div>
                         <!-- with image all text on image -->
-                        <div id="head_12" style="position: relative;" class="textCont">
-                            <img style="position: absolute" src="images/svg/rip_paper.svg" alt=" " class="svg" />
-                        </div>
+                        <!-- 
+                            
+                               <img style="position: absolute; bottom:2px" src="images/svg/rip_paper.svg" alt=" " class="svg" />
+                            -->
                     </div>
                 </div>
                 <!-- end sectionCont -->
@@ -2235,7 +2389,7 @@
             <!-- end of page_visible conditional -->
             <!-- start of page_visible conditional -->
             <section class="content_page p124672">
-                </div>
+                <!-- </div> -->
                 <!-- end .section -->
 
                 <div class="section full ">
@@ -2256,7 +2410,7 @@
                     <div class="sectionCont  small addPadd">
                         <!-- **if an image, bgcolor, video or map is added for this section** -->
                         <!-- *if image and text* -->
-                        <div class="imgCont " style="background-color: #756F6B"> <!-- with image all text on image -->
+                        <div class="imgCont " style="background-color: #e2dbd3"> <!-- with image all text on image -->
                             <div id="head_20" class="textCont">
                                 <h2 style="color: #FFFBF7; font-size: 6.3333333333333em">Empecemos el fin de semana</h2>
                                 <div class="subsection"></div>
@@ -2274,7 +2428,7 @@
                         <!-- *if image and text* -->
                         <div class="imgCont  ">
                             <div class="bgBox"
-                                style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/copa_viino.jpeg); background-position: center center">
+                                style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/prueba_birra.webp); background-position: center center">
                             </div>
                             <!-- with image all text on image -->
                             <div id="head_21" class="textCont">
@@ -2330,7 +2484,7 @@
                         <div class="sectionCont square small addPadd">
                             <!-- **if an image, bgcolor, video or map is added for this section** -->
                             <!-- *if image and text* -->
-                            <div class="imgCont " style="background-color: #4a9b95">
+                            <div class="imgCont " style="background-color: #4a9b95b5">
                                 <!-- with image all text on image -->
                                 <div id="head_30" class="textCont">
                                     <h2 style="color: #ffffff; font-size: 4.3333333333333em">¡GRACIAS DE TODO CORAZÓN!
@@ -2465,7 +2619,8 @@
                                     <!-- with image all text on image -->
                                     <div id="head_50" class="textCont">
                                         <div class="subsection">
-                                            <h3 style="color: #FFFBF7">TODAS LAS RESPUESTAS</h3>
+                                            <h3 style="color: #FFFBF7; font-family: 'Southland'">TODAS LAS RESPUESTAS
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -2565,7 +2720,7 @@
 
                                 <div id="head_54" class="textCont textOnly">
                                     <!-- TODO: aqui he borrado el style="" -->
-                                    <h2>¿Habrá aparcamiento?</h2>
+                                    <h2 style="font-size: 2.9333333333333em">¿Habrá aparcamiento?</h2>
                                     <div class="subsection">
                                         <h4>Habrá un amplio aparcamiento. Le rogamos que llegue pronto si necesita
                                             aparcar.</h4>
