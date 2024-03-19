@@ -27,6 +27,16 @@
         var footerH;
         var newSection;
         var collage;
+
+        window.addEventListener('load', function () {
+            var loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.style.display = 'none';
+                document.body.classList.add('loaded');
+                document.body.style.overflow = 'auto';
+            }, 3500)
+        });
+
         function countDown() {
             // Establece la fecha y hora de finalización
             var countDownDate = new Date("Jun 22, 2024 18:30:00").getTime();
@@ -228,6 +238,7 @@
         }
 
         $(document).ready(function () {
+
             collage = $('.gallery-collage').is('.gallery-collage');
             var isSingleNav = $('#navContent').hasClass('singleNav'); if (isWin) { $('body').addClass('isWin') }; $('textarea').autogrow({
                 context: $(this).closest('section'),
@@ -546,6 +557,7 @@
         });
 
         $(window).on('load', function () {
+
             $(this).resize();
             // change to header logo on load, may need to weight for fonts to load
             headerH = headerHeight();
@@ -2147,6 +2159,15 @@
         }
     </script>
 
+    <div id="loading" class="loading-animation">
+        <div class="animation-container">
+            <span class="first-ball"></span>
+            <span class="second-ball"></span>
+            <span class="third-ball"></span>
+        </div>
+    </div>
+
+    <!-- <div class="page-content"> -->
     <div id="navContent" class="split inverse singleNav" style="display: none;">
         <div class="bgBox" style="background-color: rgba(18,45,60,0.8)"></div>
         <nav>
@@ -2186,7 +2207,7 @@
         </style>
 
 
-        <section class="home halign-center valign-middle coverpage cover " style="background-color: #" data-color="">
+        <section class="home halign-center valign-middle coverpage cover " data-color="">
             <div class="bgBox"
                 style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/fondo_textura_papel_rugoso.jpeg); background-position: center center">
             </div>
@@ -2447,8 +2468,8 @@
                                 <!-- TODO: aqui he borrado style="" -->
                                 <h2>Cócktel de bienvenida ???</h2>
                                 <div class="subsection">
-                                    <h3 style="color: #">22 Junio 2024</h3>
-                                    <h4 style="color: #">19:00 p.m - 19:30 p.m<br />
+                                    <h3>22 Junio 2024</h3>
+                                    <h4>19:00 p.m - 19:30 p.m<br />
                                         ????<br />
                                         ????<br />
                                         ????</h4>
@@ -2966,7 +2987,7 @@
                                             placeholder="¿Alguna alergia?" class="notRequired"></textarea>
 
                                     </div>
-     
+
 
                                 </div>
                                 <!-- <a id="addGuest124674" class="addGuestBtn">
@@ -2993,6 +3014,7 @@
     <footer class="home ">
         <h6><a href="" target="_blank">Hecho con Mamor❤️​</a></h6>
     </footer>
+    <!-- </div> -->
 </body>
 
 </html>
