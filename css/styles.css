@@ -37,7 +37,13 @@ body {
   letter-spacing: 0px;
   min-width: 320px;
   color: #122d3c;
+  overflow: hidden;
+  transition: background 3.5s ease-in-out;
 }
+body.loaded {
+  background: transparent;
+}
+
 body b,
 body strong {
   font-weight: bold;
@@ -45,6 +51,144 @@ body strong {
 body i,
 body em {
   font-style: italic;
+}
+
+.svgBox svg{
+  fill: none;
+  stroke-width: 10px;
+  transform: scale(2);
+  stroke: url(#col_gradient);
+  stroke-dasharray: 60 172;
+  stroke-linecap: round;
+  animation: oj 4s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.svgBox{
+  width: 300px;
+  height: 200px;
+}
+
+.svgBox svg:nth-of-type(1){
+  stroke: #000000;
+  animation: none;
+  stroke-dasharray: none;
+}
+
+.svgBox svg:nth-of-type(2){
+  filter:blur(0.5px)
+}
+
+@keyframes oj {
+0%{
+stroke-dashoffset: 0;
+}
+
+100% {
+  stroke-dashoffset: 232;
+}
+}
+
+.loading-animation {
+  /* position: absolute; */
+  background: #fffbf7;
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.animation-container{
+  animation: fadeIn 2s 1;
+  animation-timing-function: cubic-bezier(.7, 0, 1, 2);
+  position:relative;
+  top: 50%;
+  left: 50%;
+}
+
+
+.first-ball, .second-ball, .third-ball {
+  top: -50px;
+  left: -150px;
+  position: absolute;
+ background: #4a9b95b5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: horizontal 2s infinite, vertical 1s infinite, color 3s infinite;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1), ease-in-out;
+  animation-delay: 0s, .25s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.second-ball {
+  animation-delay: 0.2s, 0.45s;
+  opacity: 0.7;
+}
+
+.third-ball {
+  animation-delay: 0.4s, 0.65s;
+  opacity: 0.5;
+}
+
+
+@keyframes horizontal {
+  0% {
+      left: -150px;
+      --ball-left: -150px;
+  }
+  50% 
+  {
+      left: 150px;
+      --ball-left: 150px;
+  }
+  100% {
+      left: -150px;
+      --ball-left: -150px;
+  }
+}
+
+@keyframes vertical {
+  0% {
+      top: -50px;
+      --ball-top: -50px;
+  }
+  50% {
+      top: 50px;
+      --ball-top: 50px;
+  }
+  100% {
+      top: -50px;
+      --ball-top: -50px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes color {
+  50% {
+      background: #10d8cbb5;
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+  .first-ball, .second-ball, .third-ball {
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 }
 
 ol,
@@ -258,8 +402,8 @@ h5 {
 
 /* for: 'site by masugus & Sandra' in footer */
 footer h6 {
-  font: 9px/1em "Throhand W01 Ink Roman";
-  text-transform: uppercase;
+  /* font: 9px/1em "Throhand W01 Ink Roman"; */
+  /* text-transform: uppercase; */
   -webkit-text-size-adjust: none;
 }
 footer h6 a {
@@ -2583,6 +2727,24 @@ footer {
   text-align: center;
   position: relative;
   z-index: 400;
+  font-size: 25px;
+  /* con el footer fijo */
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+  left: 0;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  box-sizing: border-box;
+  h6{
+    font-family: 'Southland';
+    font-weight: 700;
+    color: #4a9b95;
+  }
 }
 footer:before {
   content: "";
@@ -2592,7 +2754,7 @@ footer:before {
   top: 0;
   width: 100%;
   height: 1px;
-  background: #122d3c;
+  /* background: #122d3c; */
   /* set border color here, for gradient replace entire line */
 }
 footer.coverpage {
@@ -2777,7 +2939,7 @@ body.password {
   }
 
   header h1.monogram.text {
-    font-size: 4.6875vw;
+    font-size: 7.6875vw;
   }
   header img,
   header object {

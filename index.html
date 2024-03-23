@@ -8,7 +8,7 @@
     <meta name="color-scheme" content="light" />
     <meta name="supported-color-schemes" content="light" />
     <meta name="description"
-        content="¡Bienvenido al sitio web de bodas de cuba y miami! Ver fotos, direcciones, detalles de registro y más en la página Masugus." />
+        content="¡Bienvenido a la web de bodas de cuba y miami! Puedes ver fotos, direcciones, detalles de registro y más en la página." />
     <meta property="og:image" content="">
     <meta property="twitter:image" content="">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -16,7 +16,6 @@
     <meta name="author" content="Alberto Masogo" />
     <meta name="copyright" content="masugusdev" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="scripts/TweenLite.min.js"></script>
     <script type="text/javascript" src="scripts/CSSPlugin.min.js"></script>
@@ -27,6 +26,16 @@
         var footerH;
         var newSection;
         var collage;
+
+        window.addEventListener('load', function () {
+            var loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.style.display = 'none';
+                document.body.classList.add('loaded');
+                document.body.style.overflow = 'auto';
+            }, 3500)
+        });
+
         function countDown() {
             // Establece la fecha y hora de finalización
             var countDownDate = new Date("Jun 22, 2024 18:30:00").getTime();
@@ -228,6 +237,7 @@
         }
 
         $(document).ready(function () {
+
             collage = $('.gallery-collage').is('.gallery-collage');
             var isSingleNav = $('#navContent').hasClass('singleNav'); if (isWin) { $('body').addClass('isWin') }; $('textarea').autogrow({
                 context: $(this).closest('section'),
@@ -546,6 +556,7 @@
         });
 
         $(window).on('load', function () {
+
             $(this).resize();
             // change to header logo on load, may need to weight for fonts to load
             headerH = headerHeight();
@@ -2147,6 +2158,48 @@
         }
     </script>
 
+    <div id="loading" class="loading-animation">
+        <div class="animation-container">
+            <span class="first-ball"></span>
+            <span class="second-ball"></span>
+            <span class="third-ball"></span>
+
+            <!-- <div class="svgBox">
+                <svg width="100px" height="50px" viewBox="0 0 187.3 93.7" >
+                    <defs>
+                        <linearGradient id="col_gradient" >
+                            <stop offset="0%" style="stop-color:#4a9b95;stop-opacity:1" />
+                            <stop offset="25%" style="stop-color:#4a9b95b5;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#44dbd1b5;stop-opacity:1" />
+                            <stop offset="75%" style="stop-color:#95e9e3b5;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4a9b95b5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                    d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+                    <path
+                    d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+                </svg>
+                <svg width="100px" height="50px" viewBox="0 0 187.3 93.7" >
+                    <defs>
+                        <linearGradient id="col_gradient" >
+                            <stop offset="0%" style="stop-color:#4a9b95;stop-opacity:1" />
+                            <stop offset="25%" style="stop-color:#4a9b95b5;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#44dbd1b5;stop-opacity:1" />
+                            <stop offset="75%" style="stop-color:#95e9e3b5;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4a9b95b5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                    d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+                    <path
+                    d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+                </svg>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- <div class="page-content"> -->
     <div id="navContent" class="split inverse singleNav" style="display: none;">
         <div class="bgBox" style="background-color: rgba(18,45,60,0.8)"></div>
         <nav>
@@ -2186,7 +2239,7 @@
         </style>
 
 
-        <section class="home halign-center valign-middle coverpage cover " style="background-color: #" data-color="">
+        <section class="home halign-center valign-middle coverpage cover " data-color="">
             <div class="bgBox"
                 style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(images/fondo_textura_papel_rugoso.jpeg); background-position: center center">
             </div>
@@ -2447,8 +2500,8 @@
                                 <!-- TODO: aqui he borrado style="" -->
                                 <h2>Cócktel de bienvenida ???</h2>
                                 <div class="subsection">
-                                    <h3 style="color: #">22 Junio 2024</h3>
-                                    <h4 style="color: #">19:00 p.m - 19:30 p.m<br />
+                                    <h3>22 Junio 2024</h3>
+                                    <h4>19:00 p.m - 19:30 p.m<br />
                                         ????<br />
                                         ????<br />
                                         ????</h4>
@@ -2601,9 +2654,9 @@
                                     <!-- with image all text on image -->
                                     <div id="head_50" class="textCont">
                                         <div class="subsection">
-                                            <h3 style="color: #FFFBF7; font-family: 'Southland'">!Preguntas y
+                                            <h2 style="color: #FFFBF7; font-family: 'Southland'">!Preguntas y
                                                 Respuestas!
-                                            </h3>
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
@@ -2633,7 +2686,7 @@
                                 <!-- **if no image, bgcolor, video or map is added for this section** -->
 
                                 <div id="head_51" class="textCont textOnly">
-                                    <h2 style="font-size: 2.9333333333333em">¿La ceremonia será al aire libre?</h2>
+                                    <h2 style="font-size: 4em">¿La ceremonia será al aire libre?</h2>
                                     <div class="subsection">
                                         <h4>Sí! La ceremonia será al aire libre en la ... de Valdepeñas</h4>
                                     </div>
@@ -2659,7 +2712,7 @@
                                 <!-- **if no image, bgcolor, video or map is added for this section** -->
 
                                 <div id="head_52" class="textCont textOnly">
-                                    <h2 style="font-size: 2.9333333333333em">¿Pueden asistir niños a la ceremonia?</h2>
+                                    <h2 style="font-size: 4em">¿Pueden asistir niños a la ceremonia?</h2>
                                     <div class="subsection">
                                         <h4>¡Sí! Están admitidos pero necesitamos que nos lo comuniqueis con antelación!
                                         </h4>
@@ -2687,7 +2740,7 @@
                                 <!-- **if no image, bgcolor, video or map is added for this section** -->
 
                                 <div id="head_53" class="textCont textOnly">
-                                    <h2 style="font-size: 2.9333333333333em">¿Puedo hacer fotos durante la ceremonia?
+                                    <h2 style="font-size: 4em">¿Puedo hacer fotos durante la ceremonia?
                                     </h2>
                                     <div class="subsection">
                                         <h4>¡Claro que sí! Queremos habilitar un espacio en ésta página para que subáis
@@ -2703,7 +2756,7 @@
 
                                 <div id="head_54" class="textCont textOnly">
                                     <!-- TODO: aqui he borrado el style="" -->
-                                    <h2 style="font-size: 2.9333333333333em">¿Habrá aparcamiento?</h2>
+                                    <h2 style="font-size: 4em">¿Habrá aparcamiento?</h2>
                                     <div class="subsection">
                                         <h4>Habrá un amplio aparcamiento. Le rogamos que llegue pronto si necesita
                                             aparcar.</h4>
@@ -2731,7 +2784,7 @@
                                 <!-- **if no image, bgcolor, video or map is added for this section** -->
 
                                 <div id="head_55" class="textCont textOnly">
-                                    <h2 style="font-size: 2.9333333333333em">¿Habrá opciones vegetarianas?</h2>
+                                    <h2 style="font-size: 4em">¿Habrá opciones vegetarianas?</h2>
                                     <div class="subsection">
                                         <h4>Sí! Tendremos una variedad de opciones para satisfacer las necesidades
                                             dietéticas de cada uno. </h4>
@@ -2966,7 +3019,7 @@
                                             placeholder="¿Alguna alergia?" class="notRequired"></textarea>
 
                                     </div>
-     
+
 
                                 </div>
                                 <!-- <a id="addGuest124674" class="addGuestBtn">
@@ -2991,8 +3044,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwRhBaA21UpKbH011Pz18XR5WB-pnLMas&callback=initMap"
         async defer></script>
     <footer class="home ">
-        <h6><a href="" target="_blank">Hecho con Mamor❤️​</a></h6>
+        <h6>ᥫ᭡ Hecho con Mamor ᥫ᭡</h6>
     </footer>
+    <!-- </div> -->
 </body>
 
 </html>
